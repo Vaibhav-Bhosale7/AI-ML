@@ -10,6 +10,12 @@ const qaSchema = new mongoose.Schema(
       type: String,
       required: true
     },
+    totalTokens: {
+      type: Number,
+    },
+    avgResponseTime: {
+      type: Number,
+    },
   },
   { timestamps: true }
 );

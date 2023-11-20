@@ -2,11 +2,11 @@ const QA = require('../models/QA');
 
 // Register a new user
 const qasave = async (req, res, next) => {
-  const { userId, qadata } = req.body;
+  const { userId, qadata, totalTokens, avgResponseTime } = req.body;
 
   try {
     qaData = JSON.stringify(qadata);
-    const qa = new QA({ userId, qadata : qaData });
+    const qa = new QA({ userId, qadata : qaData, totalTokens, avgResponseTime  });
     await qa.save();
     res.json({ message: 'Data saved' });
   } catch (error) {
